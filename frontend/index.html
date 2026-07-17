@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Car Shop</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Car Shop</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li id="nav-profile" style="display: none">
+            <a href="#profile">Profil</a>
+          </li>
+          <li id="nav-cars" style="display: none">
+            <a href="#cars">Samochody</a>
+          </li>
+          <li id="nav-buy" style="display: none">
+            <a href="#buy">Kup samochód</a>
+          </li>
+          <li id="nav-admin" style="display: none">
+            <a href="#admin">Panel Admina</a>
+          </li>
+          <li id="nav-logout" style="display: none">
+            <a href="#logout">Wyloguj</a>
+          </li>
+
+          <li id="nav-login" style="display: none">
+            <a href="#login">Zaloguj</a>
+          </li>
+          <li id="nav-register" style="display: none">
+            <a href="#register">Zarejestruj</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="user-info"></div>
+    </header>
+
+    <!-- Miejsce na powiadomienia i komunikaty -->
+    <div id="notification"></div>
+    <div id="message"></div>
+
+    <main>
+      <!-- Widok startowy -->
+      <section id="home-view" class="view">
+        <h2>Witamy w Car Shop!</h2>
+        <p>Wybierz opcję z menu.</p>
+      </section>
+
+      <!-- Widok logowania -->
+      <section id="login-view" class="view" style="display: none">
+        <h2>Logowanie</h2>
+        <form id="loginForm">
+          <input
+            type="text"
+            id="loginUsername"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Zaloguj</button>
+        </form>
+      </section>
+
+      <!-- Widok rejestracji -->
+      <section id="register-view" class="view" style="display: none">
+        <h2>Rejestracja</h2>
+        <form id="registerForm">
+          <input type="text" id="regUsername" placeholder="Username" required />
+          <input
+            type="password"
+            id="regPassword"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Zarejestruj</button>
+        </form>
+      </section>
+
+      <!-- Widok profilu -->
+      <section id="profile-view" class="view" style="display: none">
+        <h2>Profil</h2>
+        <div id="profile-info"></div>
+        <h3>Edytuj profil</h3>
+        <form id="profileForm">
+          <input type="text" id="newUsername" placeholder="Nowy Username" />
+          <input type="password" id="newPassword" placeholder="Nowe Password" />
+          <button type="submit">Aktualizuj profil</button>
+        </form>
+      </section>
+
+      <!-- Widok listy samochodów -->
+      <section id="cars-view" class="view" style="display: none">
+        <h2>Samochody</h2>
+        <div id="cars-list"></div>
+        <h3>Dodaj nowy samochód</h3>
+        <form id="addCarForm">
+          <input type="text" id="carModel" placeholder="Model" required />
+          <input type="number" id="carPrice" placeholder="Cena" required />
+          <select id="carOwnerId" style="display: none">
+            <option value="">Brak właściciela</option>
+          </select>
+          <button type="submit">Dodaj samochód</button>
+        </form>
+        <div id="editCarSection" style="display: none">
+          <h3>Edytuj samochód</h3>
+          <form id="editCarForm">
+            <input type="hidden" id="editCarId" />
+            <input
+              type="text"
+              id="editCarModel"
+              placeholder="Nowy model"
+              required
+            />
+            <input
+              type="number"
+              id="editCarPrice"
+              placeholder="Nowa cena"
+              required
+            />
+            <button type="submit">Zapisz zmiany</button>
+            <button type="button" id="cancelEditCar">Anuluj</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Widok zakupu samochodu -->
+      <section id="buy-view" class="view" style="display: none">
+        <h2>Samochody</h2>
+        <div id="cars-list-buy"></div>
+        <h2>Kup samochód</h2>
+        <form id="buyCarForm">
+          <input
+            type="text"
+            id="buyCarId"
+            placeholder="ID samochodu"
+            required
+          />
+          <button type="submit">Kup samochód</button>
+        </form>
+      </section>
+
+      <!-- Widok wylogowania (symulowany) -->
+      <section id="logout-view" class="view" style="display: none">
+        <h2>Wylogowano</h2>
+        <p>Zostałeś wylogowany.</p>
+      </section>
+
+      <!-- Widok panelu admina -->
+      <section id="admin-view" class="view" style="display: none">
+        <h2>Panel Admina</h2>
+        <h3>Lista użytkowników</h3>
+        <div id="admin-users-list"></div>
+        <div id="editUserSection" style="display: none">
+          <h3>Edytuj użytkownika</h3>
+          <form id="editUserForm">
+            <input type="hidden" id="editUserId" />
+            <input
+              type="text"
+              id="editUsername"
+              placeholder="Nowy model"
+              required
+            />
+            <!-- dodanie wyboru rol z rozwijanego -->
+            <select name="role" id="editRole" required>
+              <option value="user">Użytkownik</option>
+              <option value="admin">Administrator</option>
+            </select>
+            <input
+              type="number"
+              id="editBalance"
+              placeholder="Nowe saldo"
+              required
+            />
+
+            <button type="submit">Zapisz zmiany</button>
+            <button type="button" id="cancelEditUser">Anuluj</button>
+          </form>
+        </div>
+        <h3>Zasil konto użytkownika</h3>
+        <form id="fundForm">
+          <input
+            type="text"
+            id="fundUserId"
+            placeholder="ID użytkownika"
+            required
+          />
+          <input type="number" id="fundAmount" placeholder="Kwota" required />
+          <button type="submit">Zasil konto</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="/static/dist/frontend/src/main.js"></script>
+  </body>
+</html>

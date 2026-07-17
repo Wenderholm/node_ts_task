@@ -1,0 +1,30 @@
+[
+  {
+    "id": "admin001",
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "balance": 104800
+  },
+  {
+    "id": "user_1782903449019_3e4a12",
+    "username": "adam",
+    "password": "123456",
+    "role": "user",
+    "balance": 19200
+  },
+  {
+    "id": "user_1782904788983_cia78p",
+    "username": "roman",
+    "password": "123",
+    "role": "user",
+    "balance": 9000
+  },
+  {
+    "id": "user_1782904805730_ewwto8",
+    "username": "pratryk",
+    "password": "1234",
+    "role": "user",
+    "balance": 1001000
+  }
+]

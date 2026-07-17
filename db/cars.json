@@ -1,0 +1,68 @@
+[
+  {
+    "id": "1",
+    "model": "romet romana",
+    "price": 20000,
+    "ownerId": "1"
+  },
+  {
+    "id": "2",
+    "model": "FlowCar",
+    "price": 1500,
+    "ownerId": "admin001"
+  },
+  {
+    "id": "3",
+    "model": "FlowBuyCar 3",
+    "price": 1500,
+    "ownerId": "admin001"
+  },
+  {
+    "id": "car_1782906307544_2gnhjt",
+    "model": "toyota yaris",
+    "price": 1000,
+    "ownerId": "user_1782903449019_3e4a12"
+  },
+  {
+    "id": "car_1783338216929_het1px",
+    "model": "Mazda 6",
+    "price": 1000,
+    "ownerId": "admin001"
+  },
+  {
+    "id": "car_1783340693569_azts3k",
+    "model": "nowy12",
+    "price": 1000,
+    "ownerId": "user_1782903449019_3e4a12"
+  },
+  {
+    "id": "car_1783590620975_eju655",
+    "model": "nowyModel",
+    "price": 1,
+    "ownerId": "user_1782903449019_3e4a12"
+  },
+  {
+    "id": "car_1783590652401_m6dlph",
+    "model": "nowyModel100",
+    "price": 99,
+    "ownerId": "user_1782903449019_3e4a12"
+  },
+  {
+    "id": "car_1783590680675_oziqww",
+    "model": "nowyModel101",
+    "price": 999,
+    "ownerId": null
+  },
+  {
+    "id": "car_1783593660642_ef46hg",
+    "model": "noweAuto001",
+    "price": 1,
+    "ownerId": null
+  },
+  {
+    "id": "car_1783593670589_q0vspv",
+    "model": "noweAuto002",
+    "price": 1,
+    "ownerId": "user_1782903449019_3e4a12"
+  }
+]
